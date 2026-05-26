@@ -1119,6 +1119,90 @@
     line-height: 1.7;
   }
 
+  .hotel-status {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--line);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+  }
+
+  .hotel-status .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+  }
+
+  .hotel-status .badge.paid {
+    background: var(--moss);
+    color: var(--paper);
+    position: relative;
+  }
+
+  .hotel-status .badge.paid::before {
+    content: '✓';
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  .hotel-status .badge.unpaid {
+    background: transparent;
+    color: var(--vermillion);
+    border: 1px dashed var(--vermillion);
+  }
+
+  .hotel-status .badge.unpaid::before {
+    content: '◯';
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+  }
+
+  .hotel-status .note {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* paid hotel card visual treatment */
+  .hotel-card.paid {
+    border-color: var(--moss);
+  }
+
+  .hotel-card.paid::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 48px 48px 0;
+    border-color: transparent var(--moss) transparent transparent;
+  }
+
+  .hotel-card.paid::before {
+    content: '✓';
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    z-index: 2;
+  }
+
   /* ============ OVERVIEW ============ */
   .overview-table {
     width: 100%;
@@ -1858,13 +1942,17 @@
   </div>
 
   <div class="hotels-grid">
-    <div class="hotel-card">
+    <div class="hotel-card paid">
       <div class="num">1</div>
       <div class="city-jp">東 京</div>
       <div class="city">Tokyo</div>
       <div class="dates">07.03 — 07.05 · 2 nights</div>
       <div class="name">Comfort Hotel 東京東神田</div>
       <div class="addr">〒101-0031<br>東京都千代田區東神田 1 丁目 9-10<br>Higashikanda, Chiyoda City</div>
+      <div class="hotel-status">
+        <span class="badge paid">已 付 款</span>
+        <span class="note">Paid · Confirmed</span>
+      </div>
     </div>
 
     <div class="hotel-card">
@@ -1874,6 +1962,10 @@
       <div class="dates">07.05 — 07.07 · 2 nights</div>
       <div class="name">GLANZ KEI Kyoto Station</div>
       <div class="addr">京都府京都市南區<br>西九条印町 24-1<br>Minami-ku, Nishikujo Inmachi</div>
+      <div class="hotel-status">
+        <span class="badge unpaid">未 付 款</span>
+        <span class="note">Pending Payment</span>
+      </div>
     </div>
 
     <div class="hotel-card">
@@ -1883,6 +1975,10 @@
       <div class="dates">07.07 — 07.09 · 2 nights</div>
       <div class="name">京阪環球塔酒店<br>Hotel Keihan Universal Tower</div>
       <div class="addr">大阪府大阪市此花區<br>島屋 6-2-45<br>Konohana-ku, Shimaya</div>
+      <div class="hotel-status">
+        <span class="badge unpaid">未 付 款</span>
+        <span class="note">Pending Payment</span>
+      </div>
     </div>
   </div>
 </section>
