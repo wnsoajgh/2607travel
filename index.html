@@ -461,6 +461,65 @@
     white-space: nowrap;
   }
 
+  .todo-sub {
+    margin-top: 16px;
+    padding: 14px 16px;
+    background: rgba(184, 146, 74, 0.08);
+    border-left: 3px solid var(--gold);
+  }
+
+  .todo-sub-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .todo-sub-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .todo-sub-list a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: var(--paper);
+    border: 1px solid var(--line-soft);
+    text-decoration: none;
+    color: var(--ink-soft);
+    transition: all 0.2s ease;
+    font-size: 13px;
+  }
+
+  .todo-sub-list a:hover {
+    border-color: var(--vermillion);
+    color: var(--vermillion);
+    transform: translateX(3px);
+  }
+
+  .todo-sub-list .sub-name {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .todo-sub-list .sub-arrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .todo-sub-list a:hover .sub-arrow {
+    color: var(--vermillion);
+  }
+
   /* ============ FLIGHT ============ */
   .flight-grid {
     display: grid;
@@ -1249,6 +1308,19 @@
         <div class="label">June 2026 · 6月關注</div>
         <h3>等 6 月班表出現,預約餐酒館</h3>
         <p>EUREKA SAKE · 等候 6 月最新班表公佈後,儘速線上預約座位</p>
+        <div class="todo-sub">
+          <div class="todo-sub-title">🍸 備選酒吧 · Alternatives</div>
+          <div class="todo-sub-list">
+            <a href="https://www.instagram.com/folklore_okuroji?igsh=bTNzMmd0aXg3NnUz" target="_blank" rel="noopener">
+              <span class="sub-name">FOLKLORE OKUROJI</span>
+              <span class="sub-arrow">→ IG</span>
+            </a>
+            <a href="https://www.instagram.com/mixology_salon?igsh=cDV3Zmpod2Nxam5j" target="_blank" rel="noopener">
+              <span class="sub-name">MIXOLOGY SALON</span>
+              <span class="sub-arrow">→ IG</span>
+            </a>
+          </div>
+        </div>
       </div>
       <a class="todo-action" href="https://www.instagram.com/eureka.sake?igsh=OW15NWZ4Z3d3aTAx" target="_blank" rel="noopener">
         前往 Instagram
