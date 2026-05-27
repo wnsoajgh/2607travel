@@ -1035,6 +1035,225 @@
     .houraiken-block { padding: 22px 18px 18px; }
   }
 
+  /* ============ GROUP SPLIT ============ */
+  .group-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 8px;
+    position: relative;
+  }
+
+  .group-split::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: repeating-linear-gradient(
+      to bottom,
+      var(--line) 0,
+      var(--line) 8px,
+      transparent 8px,
+      transparent 16px
+    );
+    transform: translateX(-50%);
+  }
+
+  .group {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 28px 26px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .group:hover {
+    box-shadow: 0 10px 30px rgba(26, 36, 56, 0.06);
+    transform: translateY(-2px);
+  }
+
+  .group.team-a {
+    border-top: 4px solid var(--vermillion);
+    background: linear-gradient(180deg, rgba(200, 68, 47, 0.04) 0%, transparent 30%), var(--paper);
+  }
+
+  .group.team-b {
+    border-top: 4px solid var(--indigo);
+    background: linear-gradient(180deg, rgba(43, 58, 85, 0.04) 0%, transparent 30%), var(--paper);
+  }
+
+  .group-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+    border-bottom: 1px dashed var(--line);
+  }
+
+  .group-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .group.team-a .group-icon {
+    background: var(--vermillion);
+    color: var(--paper);
+    box-shadow: 0 4px 12px rgba(200, 68, 47, 0.3);
+  }
+
+  .group.team-b .group-icon {
+    background: var(--indigo);
+    color: var(--paper);
+    box-shadow: 0 4px 12px rgba(43, 58, 85, 0.3);
+  }
+
+  .group-title-block .lab {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+
+  .group.team-a .group-title-block .lab { color: var(--vermillion); }
+  .group.team-b .group-title-block .lab { color: var(--indigo); }
+
+  .group-title-block h4 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .group-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+  }
+
+  .group ul.spots {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .group ul.spots li {
+    position: relative;
+    padding: 12px 0 12px 28px;
+    border-bottom: 1px dotted var(--line-soft);
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  .group ul.spots li:last-child {
+    border-bottom: none;
+  }
+
+  .group ul.spots li::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 22px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
+  .group.team-a ul.spots li::before { background: var(--vermillion); }
+  .group.team-b ul.spots li::before { background: var(--indigo); }
+
+  .group ul.spots li strong {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 700;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 2px;
+    font-size: 15px;
+  }
+
+  .group ul.spots li .desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .group ul.spots li.tentative {
+    opacity: 0.7;
+  }
+
+  .group ul.spots li.tentative::before {
+    background: transparent !important;
+    border: 1.5px dashed var(--vermillion);
+    width: 8px;
+    height: 8px;
+    top: 20px;
+    left: 5px;
+  }
+
+  .group.team-b ul.spots li.tentative::before {
+    border-color: var(--indigo);
+  }
+
+  .group ul.spots li.tentative strong::after {
+    content: '未定';
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    background: rgba(200, 68, 47, 0.15);
+    color: var(--vermillion);
+    padding: 2px 8px;
+    margin-left: 10px;
+    vertical-align: middle;
+    border-radius: 2px;
+    font-weight: 600;
+  }
+
+  .group.team-b ul.spots li.tentative strong::after {
+    background: rgba(43, 58, 85, 0.12);
+    color: var(--indigo);
+  }
+
+  .group-meet {
+    margin-top: 18px;
+    padding: 12px 14px;
+    background: rgba(184, 146, 74, 0.1);
+    border-left: 3px solid var(--gold);
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  .group-meet strong {
+    font-family: 'Shippori Mincho', serif;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+  }
+
+  @media (max-width: 768px) {
+    .group-split {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .group-split::before { display: none; }
+    .group { padding: 22px 20px; }
+  }
+
   /* ============ HOTELS ============ */
   .hotels {
     background: linear-gradient(to bottom, var(--paper), var(--paper-deep));
@@ -1627,18 +1846,100 @@
       </div>
       <div class="day-info">
         <div class="date">07.04 · Friday</div>
-        <div class="route">東京 市區漫遊</div>
+        <div class="route">東京 <span style="font-size:0.55em;color:var(--gold);font-weight:500;">· 分組行動</span></div>
       </div>
       <div class="day-tag">
-        <div class="badge">東 京</div>
-        <div class="sub">Tokyo</div>
+        <div class="badge" style="background:var(--gold);">分 組 日</div>
+        <div class="sub">Split Day</div>
       </div>
     </div>
+
     <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">AM</div>
+        <div class="tl-content">
+          <h4>飯店出發 · 各自行動</h4>
+          <p>早餐後從 Comfort Hotel 東京東神田出發,兩組依興趣分頭行動</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 分組對照 -->
+    <div class="group-split">
+      <!-- A 組 -->
+      <div class="group team-a">
+        <div class="group-head">
+          <div class="group-icon">🌀</div>
+          <div class="group-title-block">
+            <div class="lab">Team A</div>
+            <h4>戰鬥陀螺購買組</h4>
+          </div>
+        </div>
+        <div class="group-sub">Beyblade Hunting / 收藏狩獵</div>
+        <ul class="spots">
+          <li>
+            <strong>秋葉原 Akihabara</strong>
+            <span class="desc">電器街・宅物聖地。Yodobashi Camera Akiba(8F 玩具樓層)、AKIBA 文化 ZONE 等</span>
+          </li>
+          <li>
+            <strong>萬代南夢宮 Cross Store 東京</strong>
+            <span class="desc">池袋 Sunshine City 內 · 戰鬥陀螺 X/BX 系列主場</span>
+          </li>
+          <li>
+            <strong>中野 Broadway 中野百老匯</strong>
+            <span class="desc">二手收藏品天堂 · 絕版舊款戰鬥陀螺機率高</span>
+          </li>
+          <li>
+            <strong>淺草橋・玩具批發街</strong>
+            <span class="desc">飯店步行可達 · 玩具批發老店密集</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- B 組 -->
+      <div class="group team-b">
+        <div class="group-head">
+          <div class="group-icon">🛍️</div>
+          <div class="group-title-block">
+            <div class="lab">Team B</div>
+            <h4>市區逛街 + Outlet 組</h4>
+          </div>
+        </div>
+        <div class="group-sub">Shopping & Outlet / 採購狂歡</div>
+        <ul class="spots">
+          <li>
+            <strong>銀座 GINZA</strong>
+            <span class="desc">GINZA SIX、銀座三越、Uniqlo 旗艦店、Loft、無印旗艦</span>
+          </li>
+          <li>
+            <strong>表參道・原宿</strong>
+            <span class="desc">表參道 Hills、東急 PLAZA、流行品牌齊聚</span>
+          </li>
+          <li>
+            <strong>新宿 Shinjuku</strong>
+            <span class="desc">伊勢丹、LUMINE、BICQLO、Bic Camera 新宿東口店</span>
+          </li>
+          <li class="tentative">
+            <strong>三井 Outlet Park 幕張</strong>
+            <span class="desc">東京站搭 JR 京葉線「海濱幕張」站約 35 分 · 約 130 家店<br>※ 視當日時間決定是否前往</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 集合 -->
+    <div class="timeline" style="margin-top:32px;">
+      <div class="tl-item">
+        <div class="tl-time">PM</div>
+        <div class="tl-content">
+          <h4>晚間集合 · 共進晚餐</h4>
+          <p>兩組行程結束後於市區或飯店附近會合 · 晚餐地點待定</p>
+        </div>
+      </div>
       <div class="tl-item">
         <div class="tl-time">TBD</div>
         <div class="tl-content">
-          <div class="tl-empty">行程待規劃 · To be planned</div>
+          <div class="tl-empty">晚餐及夜間行程待規劃 · To be planned</div>
         </div>
       </div>
     </div>
@@ -2016,8 +2317,8 @@
         <td class="day-cell">Day 2</td>
         <td>07.04 Fri</td>
         <td>
-          <div class="ov-route">東京市區</div>
-          <div class="ov-hotel">待規劃</div>
+          <div class="ov-route">東京 · 分組行動</div>
+          <div class="ov-hotel">A 組:戰鬥陀螺 · B 組:市區 + Outlet(未定)</div>
         </td>
         <td>Comfort Hotel 東京東神田</td>
       </tr>
