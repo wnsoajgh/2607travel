@@ -461,6 +461,12 @@
     white-space: nowrap;
   }
 
+  .todo-status.scheduled {
+    background: var(--gold);
+    color: var(--paper);
+    border: 1px solid var(--gold);
+  }
+
   .todo-sub {
     margin-top: 16px;
     padding: 14px 16px;
@@ -1645,11 +1651,11 @@
     <div class="todo-card">
       <div class="todo-number">3</div>
       <div class="todo-body">
-        <div class="label">Before Trip · 出發前</div>
+        <div class="label">📅 6/11 預定 · Scheduled</div>
         <h3>預訂機場接送</h3>
         <p>高雄出發前往小港機場 ・ 回程關西機場 → 高雄市區 ・ 比較計程車 / 包車 / 共乘方案</p>
       </div>
-      <div class="todo-status">待 處 理</div>
+      <div class="todo-status scheduled">6 / 1 1 預 定</div>
     </div>
 
     <div class="todo-card">
@@ -1660,6 +1666,17 @@
         <p>日本 eSIM / SIM 卡 / WiFi 機 ・ 7 天方案 ・ 建議選擇吃到飽不降速</p>
       </div>
       <div class="todo-status">待 處 理</div>
+    </div>
+
+    <div class="todo-card">
+      <div class="todo-number">5</div>
+      <div class="todo-body">
+        <div class="label">📅 6/5 預定 · Scheduled</div>
+        <h3>預定新幹線車票</h3>
+        <p>のぞみ 239(東京 → 名古屋 · 7/5 08:21)・ のぞみ 71(名古屋 → 京都 · 7/5 14:26)<br>
+        可透過 SmartEX、JR 官網或 Klook 預先訂票</p>
+      </div>
+      <div class="todo-status scheduled">6 / 0 5 預 定</div>
     </div>
   </div>
 </section>
